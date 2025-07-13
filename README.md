@@ -29,21 +29,21 @@ A modern Python application built with:
    git clone https://github.com/yourusername/your-repo.git
    cd your-repo
 
-2. **Configure environment variables**:
-    Copy the example environment file:
-    '''bash
+2. **Configure environment variables:**
+    ```bash
     cp .env.example .env
 
-    Edit the .env file with your configuration:
-    '''bash
-    # Database configuration
+3. **Edit the .env file with your configuration:**
+    
+    ```bash
+    #Database configuration
     POSTGRES_USER=your_db_user
     POSTGRES_PASSWORD=your_strong_password
     POSTGRES_DB=your_db_name
     POSTGRES_HOST=db
     POSTGRES_PORT=5432
 
-    # App configuration 
+    #App configuration 
     APP_SECRET_KEY=your_secret_key
     APP_DEBUG=True
     APP_HOST=0.0.0.0
@@ -51,12 +51,12 @@ A modern Python application built with:
 
 
 
-3. **Build and run with Docker Compose** 
-    '''bash
+4. **Build and run with Docker Compose** 
+    ```bash
     docker-compose up --build
 
-4. **Access the application:**
+5. **Access the application:**
 
-    API: http://localhost:8000
-    Interactive docs: http://localhost:8000/docs
+    API: http://localhost:5002
+
     PostgreSQL: localhost:5432
