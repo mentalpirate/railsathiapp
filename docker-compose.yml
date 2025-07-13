@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:15 # Or a specific version like postgres:latest
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432" # Host_port:Container_port
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Persist data
+      # - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Optional: Initialize with SQL script
+
+  app:
+    build: . # Build the image from the current directory (where Dockerfile is)
+    container_name: python_app_container
+    depends_on:
+      - db # Ensure db service starts before app
+    ports:
+      - "5002:5002" # Example: Map port 8000 of host to 8000 of container
+    environment:
+      DATABASE_URL: postgresql://myuser:mypassword@db:5432/mydatabase # Connection string for Python app
+    volumes:
+      - .:/usr/src/app # Mount current directory to container for code changes
+    env_file: ".env"
+
+volumes:
+  postgres_data:
