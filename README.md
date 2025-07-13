@@ -29,35 +29,34 @@ A modern Python application built with:
    git clone https://github.com/yourusername/your-repo.git
    cd your-repo
 
-1. 
-Configure environment variables:
+2. **Configure environment variables**:
+    Copy the example environment file:
+    '''bash
+    cp .env.example .env
 
-Copy the example environment file:
-bashDownloadCopy code Wrapcp .env.example .env
+    Edit the .env file with your configuration:
+    '''bash
+    # Database configuration
+    POSTGRES_USER=your_db_user
+    POSTGRES_PASSWORD=your_strong_password
+    POSTGRES_DB=your_db_name
+    POSTGRES_HOST=db
+    POSTGRES_PORT=5432
 
-Edit the .env file with your configuration:
-bashDownloadCopy code Wrap# Database configuration
-POSTGRES_USER=your_db_user
-POSTGRES_PASSWORD=your_strong_password
-POSTGRES_DB=your_db_name
-POSTGRES_HOST=db
-POSTGRES_PORT=5432
-
-# App configuration
-APP_SECRET_KEY=your_secret_key
-APP_DEBUG=True
-APP_HOST=0.0.0.0
-APP_PORT=8000
+    # App configuration 
+    APP_SECRET_KEY=your_secret_key
+    APP_DEBUG=True
+    APP_HOST=0.0.0.0
+    APP_PORT=8000
 
 
 
-2. 
-Build and run with Docker Compose:
-bashDownloadCopy code Wrapdocker-compose up --build
+3. **Build and run with Docker Compose** 
+    '''bash
+    docker-compose up --build
 
-3. 
-Access the application:
+4. **Access the application:**
 
-API: http://localhost:8000
-Interactive docs: http://localhost:8000/docs
-PostgreSQL: localhost:5432
+    API: http://localhost:8000
+    Interactive docs: http://localhost:8000/docs
+    PostgreSQL: localhost:5432
